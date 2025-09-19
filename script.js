@@ -42,7 +42,7 @@ const courses = [
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
 
-    if (path.includes('index.html') || path === '/') {
+    if (path.endsWith('/') || path.includes('index.html')) {
         renderHomepage();
     } else if (path.includes('course.html')) {
         renderCourseDetailPage();
@@ -120,3 +120,4 @@ function renderPlayerPage() {
         </li>
     `).join('');
 }
+
