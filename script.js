@@ -42,7 +42,7 @@ const courses = [
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
 
-    if (path.endsWith('/') || path.includes('index.html')) {
+   if (path.endsWith('/') || path.includes('index.html')) {
         renderHomepage();
     } else if (path.includes('course.html')) {
         renderCourseDetailPage();
@@ -56,7 +56,7 @@ function renderHomepage() {
     if (!courseGrid) return;
     
     courseGrid.innerHTML = courses.map(course => `
-        <div class="course-card" onclick="location.href='course.html?id=${course.id}'">
+        <div class="course-card" onclick="location.href='./course.html?id=${course.id}'">
             <img src="${course.image}" alt="${course.title}">
             <div class="course-card-content">
                 <h3>${course.title}</h3>
@@ -87,7 +87,7 @@ function renderCourseDetailPage() {
     curriculumList.innerHTML = course.modules.map(module => `
         <li>
             <span>${module.title}</span>
-            <a href="player.html?courseId=${course.id}&moduleId=${module.id}">▶ Play</a>
+            <a href="./player.html?courseId=${course.id}&moduleId=${module.id}">▶ Play</a>
         </li>
     `).join('');
 }
@@ -111,7 +111,7 @@ function renderPlayerPage() {
 
     document.getElementById('video-title').innerText = module.title;
     document.getElementById('video-player').src = `https://www.youtube.com/embed/${module.videoId}?autoplay=1`;
-    document.getElementById('back-to-course').href = `course.html?id=${course.id}`;
+    document.getElementById('back-to-course').href = `./course.html?id=${course.id}`;
     
     const playlist = document.getElementById('playlist');
     playlist.innerHTML = course.modules.map(m => `
@@ -120,4 +120,3 @@ function renderPlayerPage() {
         </li>
     `).join('');
 }
-
