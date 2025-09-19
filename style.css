@@ -1,0 +1,63 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+header {
+    background: #1f1f1f;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 3px solid #e50914;
+}
+h1, h2 { color: #fff; }
+main { padding: 2rem 5%; }
+
+/* Homepage - Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.course-card {
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(229, 9, 20, 0.5);
+}
+.course-card img { width: 100%; height: 170px; object-fit: cover; }
+.course-card-content { padding: 1.5rem; }
+.course-card-content h3 { margin-top: 0; }
+.course-card-content p { font-size: 0.9rem; color: #aaa; }
+
+/* Course Detail Page */
+.back-link { color: #e50914; text-decoration: none; font-weight: bold; }
+.course-detail-container { background: #1f1f1f; padding: 2rem; margin-top: 2rem; border-radius: 8px; }
+.course-detail-container img { max-width: 100%; border-radius: 8px; margin-bottom: 1rem; }
+.curriculum-list { list-style-type: none; padding: 0; }
+.curriculum-list li {
+    background: #333;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.curriculum-list a { color: #fff; text-decoration: none; font-weight: bold; }
+.curriculum-list a:hover { color: #e50914; }
+
+/* Player Page */
+.player-container { display: flex; gap: 2rem; padding: 2rem; max-width: 1400px; margin: auto; }
+.video-wrapper { flex: 3; }
+.playlist-wrapper { flex: 1; background: #1f1f1f; padding: 1.5rem; border-radius: 8px; max-height: 80vh; overflow-y: auto; }
+#video-title { margin-top: 0; }
+.back-link-player { display: inline-block; margin-top: 1rem; color: #e50914; text-decoration: none; font-weight: bold; }
+#playlist .active a { color: #e50914; }
